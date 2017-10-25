@@ -1,0 +1,17 @@
+jar {
+    baseName = project.name
+}
+
+compileJava.dependsOn(processResources)
+
+dependencies {
+
+    compile project(":gws-client")
+    compileOnly("org.projectlombok:lombok")
+    compileOnly("org.springframework.boot:spring-boot-autoconfigure:$springBootVersion")
+
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    optional "org.springframework.boot:spring-boot-configuration-processor"
+
+}
+
