@@ -20,10 +20,6 @@ buildscript {
         classpath 'io.spring.gradle:propdeps-plugin:0.0.9.RELEASE'
     }
 }
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.2.1'
-}
-
 
 allprojects {
     apply plugin: 'java'
@@ -48,6 +44,11 @@ allprojects {
         // fix git repository to ./ to work with submodules
         repositoryRoot './'
     }
+    
+    task wrapper(type: Wrapper) {
+        gradleVersion = '4.2.1'
+    }
+
     repositories {
         jcenter()
         maven { url "http://repo.spring.io/snapshot" }
