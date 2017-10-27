@@ -1,0 +1,6 @@
+rootProject.name = 'gws-client-root'
+
+include 'gws-client'
+project(":gws-client").name = "gws-client"
+include 'gws-client-spring-boot-starter'
+project(":gws-client-spring-boot-starter").name = "gws-client-spring-boot-starter"
