@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '2.0.0.M5'
+        springBootVersion = '2.1.0.BUILD-SNAPSHOT'
         springReleaseTrain = 'Athens-SR6'
     }
     repositories {
