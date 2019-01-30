@@ -16,4 +16,7 @@ public class GWSProperties {
      * Group webservices URL
      */
     private String url = "https://iam-ws.u.washington.edu:7443/";
+    private String keystoreLocation;
+    private String keystorePassword;
+
 }
