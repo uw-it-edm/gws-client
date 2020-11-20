@@ -19,4 +19,13 @@ public class GWSProperties {
     private String keystoreLocation;
     private String keystorePassword;
 
+    /**
+     * The timeout in milliseconds to connect to GWS service.
+     */
+    private int connectTimeout = 30_000;
+
+    /**
+     * The socket read timeout in millseconds when reading from GWS service.
+     */
+    private int readTimeout = 30_000;
 }
