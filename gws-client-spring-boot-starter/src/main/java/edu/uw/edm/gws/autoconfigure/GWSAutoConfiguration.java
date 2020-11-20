@@ -108,6 +108,9 @@ public class GWSAutoConfiguration {
         return restTemplateBuilder.requestFactory(new Supplier<ClientHttpRequestFactory>() {
             @Override
             public ClientHttpRequestFactory get() {
+                httpComponentsClientHttpRequestFactory.setConnectTimeout(gwsProperties.getConnectTimeout());
+                httpComponentsClientHttpRequestFactory.setReadTimeout(gwsProperties.getReadTimeout());
+
                 return httpComponentsClientHttpRequestFactory;
             }
         }).build();
