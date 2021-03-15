@@ -149,11 +149,9 @@ allprojects {
                 username = resolveUserName
 
                 // Password comes from ~/.gradle/gradle.encrypted.properties
+                password = System.getenv("ARTIFACTORY_PUBLISH_PASSWORD")
                 if (credentials?.propertyMissing(resolveUserName)) {
                     password = credentials[resolveUserName]
-                } else {
-                    // try to get it from an environment variable
-                    password = System.getenv("ARTIFACTORY_PUBLISH_PASSWORD")
                 }
             }
         }
