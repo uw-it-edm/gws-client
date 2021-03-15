@@ -12,7 +12,11 @@ buildscript {
         // Note: This repository declaration is needed to properly resolve the gradle-gitflow plugin.
         //       Artifactory is unable configure repo for build plugins, the workaround is to fully configure
         //       the repo url as a respository. See https://www.jfrog.com/jira/browse/GAP-261
-        maven { url System.getenv('ARTIFACTORY_CONTEXT') + '/' + System.getenv('ARTIFACTORY_RELEASE_REPO') }
+        maven { 
+            url System.getenv('ARTIFACTORY_CONTEXT') + '/' + System.getenv('ARTIFACTORY_RELEASE_REPO')
+            username = System.getenv("ARTIFACTORY_PUBLISH_USER")
+            password = System.getenv("ARTIFACTORY_PUBLISH_PASSWORD")
+        }
     }
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
