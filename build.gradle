@@ -14,8 +14,10 @@ buildscript {
         //       the repo url as a respository. See https://www.jfrog.com/jira/browse/GAP-261
         maven { 
             url System.getenv('ARTIFACTORY_CONTEXT') + '/' + System.getenv('ARTIFACTORY_RELEASE_REPO')
-            username = System.getenv("ARTIFACTORY_PUBLISH_USER")
-            password = System.getenv("ARTIFACTORY_PUBLISH_PASSWORD")
+            credentials {
+                username = System.getenv("ARTIFACTORY_PUBLISH_USER")
+                password = System.getenv("ARTIFACTORY_PUBLISH_PASSWORD")
+            }
         }
     }
     dependencies {
