@@ -146,6 +146,8 @@ allprojects {
                     resolveUserName = System.getenv("ARTIFACTORY_PUBLISH_USER")
                 }
 
+                logger.lifecycle "User environment var: " + System.getenv("ARTIFACTORY_PUBLISH_USER")
+
                 username = resolveUserName
 
                 // Password comes from ~/.gradle/gradle.encrypted.properties
