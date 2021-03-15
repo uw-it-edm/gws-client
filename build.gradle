@@ -140,21 +140,21 @@ allprojects {
         resolve {
             repository {
                 // Username comes from ~/.gradle/gradle.properties
-                def resolveUserName = project.getProperties().get('eaiw.artifactoryResolveUser')
-                if (!resolveUserName?.trim()) {
-                    // try to get it from an environment variable
-                    resolveUserName = System.getenv("ARTIFACTORY_PUBLISH_USER")
-                }
+                // def resolveUserName = project.getProperties().get('eaiw.artifactoryResolveUser')
+                // if (!resolveUserName?.trim()) {
+                //     // try to get it from an environment variable
+                //     resolveUserName = System.getenv("ARTIFACTORY_PUBLISH_USER")
+                // }
 
-                logger.lifecycle "User environment var: " + System.getenv("ARTIFACTORY_PUBLISH_USER")
+                // logger.lifecycle "User environment var: " + System.getenv("ARTIFACTORY_PUBLISH_USER")
 
-                username = resolveUserName
+                username = System.getenv("ARTIFACTORY_PUBLISH_USER")
 
                 // Password comes from ~/.gradle/gradle.encrypted.properties
                 password = System.getenv("ARTIFACTORY_PUBLISH_PASSWORD")
-                if (credentials?.propertyMissing(resolveUserName)) {
-                    password = credentials[resolveUserName]
-                }
+                // if (credentials?.propertyMissing(resolveUserName)) {
+                //     password = credentials[resolveUserName]
+                // }
             }
         }
     }
