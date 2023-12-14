@@ -68,6 +68,17 @@ allprojects {
     }
 
     publishing {
+        repositories {
+            maven {
+                name = "GitHubPackages"
+                url = "https://maven.pkg.github.com/uw-it-edm/gws-client"
+                credentials {
+                    username = System.getenv("GITHUB_ACTOR")
+                    password = System.getenv("GITHUB_TOKEN")
+                }
+            }
+        }
+
         publications {
             mavenJava(MavenPublication) {
                 from components.java
