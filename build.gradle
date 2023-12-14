@@ -1,3 +1,5 @@
+// https://repo.spring.io/releases is not available
+// see https://stackoverflow.com/questions/76370197/spring-propdeps-plugin-no-longer-working
 buildscript {
     ext {
         springBootVersion = '2.0.5.RELEASE'
@@ -6,7 +8,7 @@ buildscript {
     repositories {
         jcenter()
         maven { url 'https://repo.spring.io/milestone' }
-        maven { url 'https://repo.spring.io/plugins-release' }
+        maven { url "https://repo.spring.io/plugins-snapshot" }        
         maven { url "https://raw.githubusercontent.com/uw-it-edm/edm-artifacts/master" }
         maven { url "https://plugins.gradle.org/m2/" }
     }
@@ -16,7 +18,7 @@ buildscript {
         classpath "gradle.plugin.com.gorylenko.gradle-git-properties:gradle-git-properties:1.5.2"
         classpath("org.jfrog.buildinfo:build-info-extractor-gradle:4.8.1")
         classpath("nu.studer:gradle-credentials-plugin:1.0.7")
-        classpath 'io.spring.gradle:propdeps-plugin:0.0.10.RELEASE'
+        classpath 'io.spring.gradle:propdeps-plugin:0.0.8-SNAPSHOT'
     }
 }
 
