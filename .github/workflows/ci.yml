@@ -28,7 +28,7 @@ jobs:
           arguments: publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Slack Notification
+      - name: Send Notification
         if: ${{ failure() }}
         uses: uw-it-edm/notify-microsoft-teams@master
         with:
