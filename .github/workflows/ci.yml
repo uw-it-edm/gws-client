@@ -1,4 +1,4 @@
-name: CI Build
+name: "gws-client: CI Build"
 
 on: [push]
 
@@ -30,8 +30,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Slack Notification
         if: ${{ failure() }}
-        uses: rtCamp/action-slack-notify@v2
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_TITLE: gws-client Build Alert
-          SLACK_COLOR: '#ff0000'
+        uses: uw-it-edm/notify-microsoft-teams@master
+        with:
+          webhook_url: ${{ secrets.MSTEAMS_CI_BUILDS }}
+          job: ${{ toJson(job) }}
