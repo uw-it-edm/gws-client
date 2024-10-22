@@ -24,7 +24,7 @@ public class GroupsWebServiceClientImplTest {
     @Test
     public void searchUrlTest() {
         String searchURL = gws.getSearchURL(GWSSearchType.direct, "toto");
-
+throw error
         assertThat(searchURL, is(equalTo("http://gws.com/group_sws/v2/search?type=direct&member=toto")));
     }
 }
